@@ -17,17 +17,17 @@ train_datagen = ImageDataGenerator(
         zoom_range=0.2,
         horizontal_flip=True)
 
-test_datagen = ImageDataGenerator(rescale=1./255)
+#test_datagen = ImageDataGenerator(rescale=1./255)
 
 train_generator = train_datagen.flow_from_directory(
         train_data_dir,
         target_size=(img_width, img_height),
         batch_size=32)
 
-validation_generator = test_datagen.flow_from_directory(
-        'data/validation',
-        target_size=(img_width, img_height),
-        batch_size=32)
+#validation_generator = test_datagen.flow_from_directory(
+        #'data/validation',
+        #target_size=(img_width, img_height),
+        #batch_size=32)
 
 # creat the base pre-trained model
 base_model = InceptionV3(weights='imagenet',include_top=False)
@@ -58,18 +58,18 @@ for layer in base_model.layers:
     layer.trainable = False
 
 # compile the model
-model.compile(optimizer='rmsprop', loss='categorical_crossentropy')
+model.compile(optimizer='rmsprop', loss='categorical_crossentropy',metrics=['accuracy'])
 
 #train the model on the new data
 model.fit_generator(
         train_generator,
-        samples_per_epoch=2000,
-        nb_epoch=50,
-        validation_data=validation_generator,
+        samples_per_epoch=100,
+        nb_epoch=10,
+        #validation_data=validation_generator,
         nb_val_samples=800)
 
 
 
-feature = model.predict_generator(train_generator,
-                        val_samples = 10)
-print(feature.shape)
+#feature = model.predict_generator(train_generator,
+                        #val_samples = 10)
+#print(feature.shape)
