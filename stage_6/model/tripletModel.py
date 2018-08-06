@@ -10,6 +10,7 @@ class tripletModel():
     def __init__(self, config):
         self.embidding_dim = config.embedding_dim
         self.margin = config.margin
+        self.input = tf.placeholder(tf.float32, shape=(None, 224, 224, 3))
         self.build_model()
         self.init_saver()
 
@@ -17,7 +18,7 @@ class tripletModel():
     def build_model(self, input, is_training=True):
         
         with tf.contrib.slim.arg_scope(mobilenet_v2.training_scope(is_training=is_training)):
-            logits, endpoints = mobilenet_v2.mobilenet(images)
+            logits, endpoints = mobilenet_v2.mobilenet()
         
         self.mobilenetfea = endpoints["global_pool"]
 
@@ -32,8 +33,10 @@ class tripletModel():
             tf.summary.scalar('triplet loss', self.tri_loss)
             self.reg_loss = tf.losses.get_regularization_losses()
             self.total_loss = self.tri_loss + self.reg_loss           
-            self.train_step = tf.train.AdamOptimizer(self.config.learning_rate).minimize(self.total_loss,
+            self.train_op = tf.train.AdamOptimizer(self.config.learning_rate).minimize(self.total_loss,
                                                                                          global_step=self.global_step_tensor)
+        merged = tf.summary.merge_all()
+        
 
     
     def triplet_loss(self):

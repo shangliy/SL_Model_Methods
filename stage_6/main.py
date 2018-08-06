@@ -7,6 +7,9 @@ import tensorflow as tf
 
 from utils.dirs import create_dirs
 from urils.configs import process_config
+from models.tripletModel import tripletModel
+from utils.logger import Logger
+from utils.utils import get_args
 
 
 def main():
@@ -32,7 +35,7 @@ def main():
     # create the model
     model = tripletModel(config)
     # create the tensorboard logger
-    logger = Logger(sees, config)
+    #logger = Logger(sees, config)
     # create trainer and pass all previous components to it
     trainer = Trainer(sess, model, data, config, logger)
     # load model if exists
