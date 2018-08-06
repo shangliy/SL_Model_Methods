@@ -6,6 +6,7 @@ import argparse
 import tensorflow as tf
 
 from utils.dirs import create_dirs
+from urils.configs import process_config
 
 
 def main():
@@ -16,6 +17,11 @@ def main():
     parser.add_argument('--data_dir', default='data/mnist',
                         help="Directory containing the dataset")
 
+    args = parser.parse_args()
+    json_path = os.path.join(args.model_dir, 'params.json')
+
+    config = process_config(json_path)
+    
     # create the log directory
     create_dirs([config.summary_sir, config.checkpoint_dir])
     # create tensorflow session
