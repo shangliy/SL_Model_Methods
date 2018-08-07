@@ -6,11 +6,18 @@ Handle the data as a data structure
 
 import numpy
 
+
 def scale_mean_norm(data):
+    """
+    Normalization of the input data
+    :param data: Input data
+    :return: normalized data and mean value
+    """
     mean = numpy.mean(data)
-    data = (data - mean)/ 255.0
+    data = (data - mean) / 255.0
 
     return data, mean
+
 
 class DataStr(object):
     def __init__(self, data, labels, image_size, num_class=0, perc_train=0.9, scale=True):
