@@ -1,40 +1,52 @@
+import tensorflow as tf
+from tqdm import tqdm
+import tensorflow.contrib.slim as slim
+
+
 class Trainer():
-    def __init__(self, sess, model, config, logger, data_loader):
+    def __init__(self, sess, model, data_loader, config,  is_training=True):
+        """Initilization of train
+
+        Arguments:
+            sess {[type]} -- [description]
+            model {[type]} -- [description]
+            config {[type]} -- [description]
+            logger {[type]} -- [description]
+            data_loader {[type]} -- [description]
         """
-        Constructing the Cifar trainer based on the Base Train..
-        Here is the pipeline of constructing
-        - Assign sess, model, config, logger, data_loader(if_specified)
-        - Initialize all variables
-        - Load the latest checkpoint
-        - Create the summarizer
-        - Get the nodes we will need to run it from the graph
-        :param sess:
-        :param model:
-        :param config:
-        :param logger:
-        :param data_loader:
-        """
+
+        self.sess = sess
         self.model = model
         self.config = config
-        # load the model from the latest checkpoint
-        #self.model.load(self.sess)
+        self.data_loader = data_loader
+        self.cur_iterration = 0
+        self.train_writer = tf.summary.FileWriter( self.config.summary_dir, sess.graph)
 
-        # Summarizer
-        #self.summarizer = logger
+        self.init = tf.global_variables_initializer()
+        self.sess.run(self.init)
 
-        #self.x, self.y, self.is_training = tf.get_collection('inputs')
-        #self.train_op, self.loss_node, self.acc_node = tf.get_collection('train')
-    
+        if self.config.load:
+            self.model.load(self.sess)
+        else:
+
+            saver_mobile = tf.train.Saver(var_list=tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES, scope='MobilenetV2'))
+            checkpoint_name = config.checkpoint_dir + 'mobilenet_v2_1.0_224' #@param
+            checkpoint = checkpoint_name + '.ckpt'
+            saver_mobile.restore(sess,  checkpoint)
+
+
     def train(self):
         """
         This is the main loop of training
         Looping on the epochs
         :return:
         """
+
         for cur_epoch in range(self.model.cur_epoch_tensor.eval(self.sess), self.config.num_epochs + 1, 1):
             self.train_epoch(cur_epoch)
-            self.sess.run(self.model.increment_cur_epoch_tensor)
-            self.test(cur_epoch)
+            self.model.global_step_assign_op.eval(session=self.sess, feed_dict={
+                    self.model.global_step_input: self.model.global_step_tensor.eval(self.sess) + 1})
+
 
     def train_epoch(self, epoch=None):
         """
@@ -42,37 +54,24 @@ class Trainer():
         :param epoch: cur epoch number
         :return:
         """
-        # initialize dataset
-        self.data_loader.initialize(self.sess, is_train=True)
 
         # initialize tqdm
         tt = tqdm(range(self.config.num_iter_per_epoch),
                   desc="epoch-{}-".format(epoch))
 
-        #loss_per_epoch = AverageMeter()
-        #acc_per_epoch = AverageMeter()
-
         # Iterate over batches
         for cur_it in tt:
             # One Train step on the current batch
-            loss = self.train_step()
-            # update metrics returned from train_step func
-            #loss_per_epoch.update(loss)
-            #acc_per_epoch.update(acc)
+            loss, summary = self.train_step()
 
-        #self.sess.run(self.model.global_epoch_inc)
+            self.train_writer.add_summary(summary, self.cur_iterration)
+            self.cur_iterration += 1
 
-        # summarize
-        #summaries_dict = {'train/loss_per_epoch': loss_per_epoch.val,
-        #                  'train/acc_per_epoch': acc_per_epoch.val}
-        #self.summarizer.summarize(self.model.global_step_tensor.eval(self.sess), summaries_dict)
-        train_writer = tf.summary.FileWriter(FLAGS.summaries_dir + '/train',
-                                      sess.graph)
-        train_writer.add_summary(summary, epoch)
+            #print("""Epoch-{%s}  loss:{%.4f}"""%(epoch, loss))
 
         self.model.save(self.sess)
-        
-        print("""Epoch-{}  loss:{:.4f} -- acc:{:.4f}""".format(epoch, loss_per_epoch.val, acc_per_epoch.val))
+
+
 
         tt.close()
 
@@ -82,8 +81,8 @@ class Trainer():
         also get the loss & acc of that minibatch.
         :return: (loss, acc) tuple of some metrics to be used in summaries
         """
-        _, loss, summary = self.sess.run([self.train_op, self.model.total_loss],
-                                     feed_dict={self.is_training: True})
+        batch_images = next(self.data_loader.next_batch())
+        _, loss, summary, ea = self.sess.run([self.model.train_op, self.model.total_loss, self.model.merged, self.model.euclidean_a_p],
+                                     feed_dict={self.model.input: batch_images, self.model.is_training: True})
+        
         return loss, summary
-    
-    
