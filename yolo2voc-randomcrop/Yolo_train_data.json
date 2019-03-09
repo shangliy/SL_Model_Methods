@@ -1,0 +1,44 @@
+[
+    {
+        "image_path": "/media/shangliy/Storage/Source/yolo_train/testout/train/JPEGImages/000000.jpg", 
+        "labels": [
+            "11"
+        ], 
+        "rects": [
+            {
+                "x1": 336.0, 
+                "x2": 512.0, 
+                "y1": 100.0, 
+                "y2": 232.0
+            }
+        ]
+    }, 
+    {
+        "image_path": "/media/shangliy/Storage/Source/yolo_train/testout/train/JPEGImages/000001.jpg", 
+        "labels": [
+            "2"
+        ], 
+        "rects": [
+            {
+                "x1": 556.0, 
+                "x2": 669.0, 
+                "y1": 206.0, 
+                "y2": 338.0
+            }
+        ]
+    }, 
+    {
+        "image_path": "/media/shangliy/Storage/Source/yolo_train/testout/train/JPEGImages/000002.jpg", 
+        "labels": [
+            "1"
+        ], 
+        "rects": [
+            {
+                "x1": 124.0, 
+                "x2": 182.0, 
+                "y1": 0.0, 
+                "y2": 52.0
+            }
+        ]
+    }
+]

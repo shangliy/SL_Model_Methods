@@ -1,0 +1,83 @@
+[
+    {
+        "url": "http://shop.nordstrom.com/s/a-l-c-miriam-fit-flare-knit-dress/4179641", 
+        "price": "$495.00", 
+        "itemName": "A.L.C. 'Miriam' Fit & Flare Knit Dress | Nordstrom", 
+        "reference_image_links": [
+            "https://s3-us-west-1.amazonaws.com/fitroom-rohan-image-data/57a1dd1d5ecbb8ccaf8b17d7_Nordstrom_11626587_1.jpg"
+        ], 
+        "seller": "Nordstrom"
+    }, 
+    {
+        "url": "https://www.tradesy.com/dresses/banana-republic-dress-16059577/?tref=category", 
+        "price": "$88.00", 
+        "itemName": "Banana Republic Dress 73% off retail", 
+        "reference_image_links": [
+            "https://s3-us-west-1.amazonaws.com/fitroom-rohan-image-data/57a1dd4c5ecbb8ccaf97049f_tradesy_16059577_1.jpg"
+        ], 
+        "seller": "Tradesy"
+    }, 
+    {
+        "url": "https://www.tradesy.com/dresses/h-and-m-dress-lavender-6490447/?tref=category", 
+        "price": "$49.95", 
+        "itemName": "H&M Lavender Embellished Dress 52% off retail", 
+        "reference_image_links": [
+            "https://s3-us-west-1.amazonaws.com/fitroom-rohan-image-data/57a1dd4d5ecbb8ccaf975298_tradesy_6490447_1.jpg"
+        ], 
+        "seller": "Tradesy"
+    }, 
+    {
+        "url": "http://www.barneys.com/Valentino-Compact-Knit-Shift-Dress-504425235.html", 
+        "price": "$2,950", 
+        "itemName": "Valentino Compact Knit Shift Dress-Multi", 
+        "reference_image_links": [
+            "https://s3-us-west-1.amazonaws.com/fitroom-rohan-image-data/57a1dd8f5ecbb8ccafa9228a_shopstyle_517681150_1.jpg"
+        ], 
+        "seller": "Barneys New York"
+    }, 
+    {
+        "url": "https://www.tradesy.com/dresses/brat-star-dress-black-and-gold-16185637/?tref=category", 
+        "price": "$14.00", 
+        "itemName": "Brat Star Black And Gold Dress", 
+        "reference_image_links": [
+            "https://s3-us-west-1.amazonaws.com/fitroom-rohan-image-data/57a1dd4b5ecbb8ccaf964962_tradesy_16185637_1.jpg"
+        ], 
+        "seller": "Tradesy"
+    }, 
+    {
+        "url": "https://www.tradesy.com/dresses/anthropologie-dress-mustard-778938/?tref=category", 
+        "price": "$148.00", 
+        "itemName": "Anthropologie Mustard Sweater Dress 86% off retail", 
+        "reference_image_links": [
+            "https://s3-us-west-1.amazonaws.com/fitroom-rohan-image-data/57a1dd485ecbb8ccaf94e66f_tradesy_778938_1.jpg"
+        ], 
+        "seller": "Tradesy"
+    }, 
+    {
+        "url": "http://www.yoox.com/US/39529232/item?dept=women#cod10=39529232MX&sizeId=4", 
+        "price": "$192", 
+        "itemName": "SELECTED FEMME Short dresses", 
+        "reference_image_links": [
+            "https://s3-us-west-1.amazonaws.com/fitroom-rohan-image-data/57a1dd9f5ecbb8ccafb0b9a7_shopstyle_478346843_1.jpg"
+        ], 
+        "seller": "yoox.com"
+    }, 
+    {
+        "url": "http://shop.nordstrom.com/S/4383932", 
+        "price": "$99", 
+        "itemName": "Anne Klein Animal Print Faux Wrap Dress", 
+        "reference_image_links": [
+            "https://s3-us-west-1.amazonaws.com/fitroom-rohan-image-data/57a1dd915ecbb8ccafa9e8b6_shopstyle_523709185_1.jpg"
+        ], 
+        "seller": "Nordstrom"
+    }, 
+    {
+        "url": "http://www.neimanmarcus.com/Michael-Kors-Collection-Double-Breasted-Cape-Jacket/prod179520471_cat46580776__/p.prod?ItemId=prod179520471", 
+        "price": "$2,450", 
+        "itemName": "Michael Kors Collection Double-Breasted Cape Jacket", 
+        "reference_image_links": [
+            "https://s3-us-west-1.amazonaws.com/fitroom-rohan-image-data/57a1dd8f5ecbb8ccafa8f3cf_shopstyle_473154077_1.jpg"
+        ], 
+        "seller": "Neiman Marcus"
+    }
+]

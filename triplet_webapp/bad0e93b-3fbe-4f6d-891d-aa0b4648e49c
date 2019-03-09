@@ -1,0 +1,83 @@
+[
+    {
+        "url": "http://www.yoox.com/US/37728750/item?dept=women#cod10=37728750RD&sizeId=3", 
+        "price": "$135", 
+        "itemName": "PINKO GREY Tank tops", 
+        "reference_image_links": [
+            "https://s3-us-west-1.amazonaws.com/fitroom-rohan-image-data/57a1dda25ecbb8ccafb243b6_shopstyle_486710688_1.jpg"
+        ], 
+        "seller": "yoox.com"
+    }, 
+    {
+        "url": "http://www.lordandtaylor.com/webapp/wcs/stores/servlet/en/lord-and-taylor/scoop-neck-lace-dress-0474-bl1334plt--1", 
+        "price": "$159", 
+        "itemName": "Belle By Badgley Mischka Scoop Neck Lace Dress", 
+        "reference_image_links": [
+            "https://s3-us-west-1.amazonaws.com/fitroom-rohan-image-data/57a1ddab5ecbb8ccafb6d8a6_shopstyle_522795837_1.jpg"
+        ], 
+        "seller": "Lord & Taylor"
+    }, 
+    {
+        "url": "https://www.tradesy.com/dresses/ella-moss-dress-heather-gray-3033274/?tref=category", 
+        "price": "$188.00", 
+        "itemName": "Ella Moss Heather Gray Brynn Mesh Yoke A-line Dress 47% off retail", 
+        "reference_image_links": [
+            "https://s3-us-west-1.amazonaws.com/fitroom-rohan-image-data/57a1dd4c5ecbb8ccaf96f690_tradesy_3033274_1.jpg"
+        ], 
+        "seller": "Tradesy"
+    }, 
+    {
+        "url": "https://www.tradesy.com/dresses/ella-moss-dress-heather-gray-3033247/?tref=category", 
+        "price": "$188.00", 
+        "itemName": "Ella Moss Heather Gray Brynn Mesh Yoke A-line Dress 47% off retail", 
+        "reference_image_links": [
+            "https://s3-us-west-1.amazonaws.com/fitroom-rohan-image-data/57a1dd4c5ecbb8ccaf96f69d_tradesy_3033247_1.jpg"
+        ], 
+        "seller": "Tradesy"
+    }, 
+    {
+        "url": "http://shop.nordstrom.com/S/4258588", 
+        "price": "$545", 
+        "itemName": "BOSS 'Diopena' Sleeveless Suiting Fabric Sheath Dress", 
+        "reference_image_links": [
+            "https://s3-us-west-1.amazonaws.com/fitroom-rohan-image-data/57a1dd935ecbb8ccafab06ab_shopstyle_512426266_1.jpg"
+        ], 
+        "seller": "Nordstrom"
+    }, 
+    {
+        "url": "http://www.neimanmarcus.com/Eileen-Fisher-Long-Sleeve-Fleece-Tunic-Plus-Size-/prod184380490_cat55190739__/p.prod?ItemId=prod184380490", 
+        "price": "$178", 
+        "itemName": "Eileen Fisher Long-Sleeve Fleece Tunic, Plus Size", 
+        "reference_image_links": [
+            "https://s3-us-west-1.amazonaws.com/fitroom-rohan-image-data/57a1dd8e5ecbb8ccafa895e1_shopstyle_501908185_1.jpg"
+        ], 
+        "seller": "Neiman Marcus"
+    }, 
+    {
+        "url": "http://us.topshop.com/en/tsus/product/petitie-strappy-back-dress-5426897", 
+        "price": "$38", 
+        "itemName": "Petitie strappy back dress", 
+        "reference_image_links": [
+            "https://s3-us-west-1.amazonaws.com/fitroom-rohan-image-data/57a1dda85ecbb8ccafb53b7f_shopstyle_519023605_1.jpg"
+        ], 
+        "seller": "Topshop"
+    }, 
+    {
+        "url": "http://www.kohls.com/product/prd-2465842/womens-jezebel-urban-lounge-modal-t-back-chemise.jsp", 
+        "price": "$39", 
+        "itemName": "Women's Jezebel Urban Lounge Modal T-Back Chemise", 
+        "reference_image_links": [
+            "https://s3-us-west-1.amazonaws.com/fitroom-rohan-image-data/57a1ddc55ecbb8ccafc36984_shopstyle_522239740_1.jpg"
+        ], 
+        "seller": "Kohl's"
+    }, 
+    {
+        "url": "http://www.marissacollections.com/shop/34slv-fttd-punto-milano-dress-16p2812530-gi-277041.html", 
+        "price": "$2,050", 
+        "itemName": "GIVENCHY Punto Milano Dress", 
+        "reference_image_links": [
+            "https://s3-us-west-1.amazonaws.com/fitroom-rohan-image-data/57a1dda65ecbb8ccafb40b88_shopstyle_512644701_1.jpg"
+        ], 
+        "seller": "Marissa Collections"
+    }
+]
